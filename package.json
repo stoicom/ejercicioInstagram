@@ -1,0 +1,27 @@
+{
+  "name": "ejercicioinstagram",
+  "version": "1.0.0",
+  "description": "Ejercicio final de curso de Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoicom/ejercicioInstagram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stoicom/ejercicioInstagram/issues"
+  },
+  "homepage": "https://github.com/stoicom/ejercicioInstagram#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "axios": "^0.18.0",
+    "lite-server": "^2.4.0",
+    "webpack": "^4.25.1"
+  }
+}
