@@ -1,0 +1,72 @@
+body{
+    background-color: #A2AEA7;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#container
+{
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.photo
+{
+    position: relative;
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.photo:before, .photo:after {
+    content: '';
+    content: none; 
+}
+
+#username
+{
+    position: relative;
+    font-size: 16px;    
+}
+
+.photoURI
+{
+    position: relative;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.photoURI img
+{
+    width: 100%;
+}
+
+.like
+{
+    position: relative;
+    width: 100%;
+}
+
+.like ul{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.like li 
+{
+    display: inline;
+    margin: 0px 10px 0px 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.like:before, .like:after {
+    content: '';
+    content: none; 
+}
+
+button
+{
+    border: none;
+}
