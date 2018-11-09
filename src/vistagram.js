@@ -30,8 +30,8 @@ class Vistagram {
             <li>Me gustan ${photo.likes.toLocaleString('es')}</li>
             </ul>
             </div>
-            <div clas="comments">
-            <p>${this.showComments(photo.comments,index)}</p>
+            <div class="comments">
+            ${this.showComments(photo.comments,index)}
             </div>  
             <div class="date"><p>${this.formatData(photo.date)}</p></div>
             </div>`
@@ -43,35 +43,31 @@ class Vistagram {
 
     showComments(comments,index)
     {
-        if(comments.length === 0) return 'No tiene comentarios'
+        if(comments.length === 0) return 'No tiene comentarios'     
 
-        return comments[0] + '</br> <button id="moreComents' + index + '">Mostra más cometarios</buttom>'
-       // document.getElementById(`moreComents${index}`).addEventListener('click', () => this.likePhoto(this.photos[count]))
+        let yesComments = `<p class="contComments collapsed" id="contComments${index}">${comments.map(comment => comment).join('</br>')}</p><p><button id="moreComments${index}" class="BtnMoreComments">Cargar más cometarios</buttom></p>`
 
-        
-        // return  buttonCommets
+        let noComments = `<p class="contComments">${comments} </br><span class="noMoreComments">No tienen más comentarios</span></p>`
 
-        // if(comments.length > 0){
-        //     return comments[0]
-        // }
+        return (comments.length >= 2 ? yesComments : noComments) 
         // return comments.map(comment => comment).join('</br>')
     }
 
-    clickComments()
+    clickComments(count)
     {
-        console.log('mostrar más')
+        document.getElementById(`contComments${count}`).classList.toggle('collapsed');
     }
 
     formatData(data)
     {
-        var ES = new Intl.DateTimeFormat("es-ES")
+        let ES = new Intl.DateTimeFormat("es-ES")
         return ES.format(new Date(data));
     }
 
     addEvents(){
         for (let count = 0; count < this.photos.length; count++) {
            document.getElementById(`likeBtn${count}`).addEventListener('click', () => this.likePhoto(this.photos[count]))
-        //    document.getElementById(`moreComents${count}`).addEventListener('click', () => this.clickComments())
+           if(this.photos[count].comments.length >= 2) document.getElementById(`moreComments${count}`).addEventListener('click', () => this.clickComments(count))
         }
     }
 
@@ -79,7 +75,7 @@ class Vistagram {
             this.photos = this.photos.map(photo => {
                 if(photoToChange.photoURI === photo.photoURI) 
                 {
-                    if(photoToChange.liked === false ){
+                    if(!photoToChange.liked){
                         photo.liked = true
                         photo.likes++   
                     }

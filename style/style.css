@@ -1,6 +1,8 @@
+@import '../node_modules/reset-css/reset.css';
+
 body{
     background-color: #A2AEA7;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #container
@@ -16,43 +18,38 @@ body{
     background-color: #fff;
     padding: 10px;
     margin: 20px 0px;
+    border: solid 1px #838e88;
 }
-
 .photo:before, .photo:after {
     content: '';
     content: none; 
 }
-
-#username
+.username
 {
     position: relative;
-    font-size: 16px;    
+    font-weight: bold;
+    padding: 10px 0px;
 }
-
 .photoURI
 {
     position: relative;
     width: 100%;
     margin: 10px 0px;
 }
-
 .photoURI img
 {
     width: 100%;
 }
-
 .like
 {
     position: relative;
     width: 100%;
 }
-
 .like ul{
     width: 100%;
     margin: 0px;
     padding: 0px;
 }
-
 .like li 
 {
     display: inline;
@@ -60,13 +57,47 @@ body{
     padding: 0px;
     list-style: none;
 }
-
 .like:before, .like:after {
     content: '';
     content: none; 
 }
-
 button
 {
+    font-size: 16px;
+    margin: 0px;
+    text-align: left;
     border: none;
+    padding: 0px;
+}
+button:focus {outline:0;}
+.comments
+{
+    padding: 20px 0px 10px 0px;
+}
+.comments p{
+    line-height: 30px;
+}
+.date
+{
+    font-size: 14px;
+    color: #666;
+    font-weight: 300;
+    padding: 10px 0px;
+}
+.BtnMoreComments
+{
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0px;
+}
+.noMoreComments
+{
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0px;    
+}
+.contComments.collapsed
+{
+    max-height: 30px;
+    overflow: hidden;
 }
